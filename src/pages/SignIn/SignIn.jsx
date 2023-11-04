@@ -1,4 +1,9 @@
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+import { AuthContext } from "../../Provider/AuthProvider";
 
 
 
@@ -58,7 +63,7 @@ const SignIn = () => {
                 </div>
             </form>
             <p className="text-center mt-4">Dont’t Have An Account ? <Link className="text-red-400" to='/signup'>SignUp</Link></p>
-            <p className="text-red-600 text-center mt-2 text-xl">{"error"}</p>
+            <p className="text-red-600 text-center mt-2 text-xl">{error}</p>
 
         </div>
     );
