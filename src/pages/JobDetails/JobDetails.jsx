@@ -37,7 +37,7 @@ const JobDetails = () => {
                 if (res.data) {
                     MySwal.fire(
                         'WOW!',
-                        'added new jobs!',
+                        'your bid added!',
                         'success'
                     )
                 }
@@ -78,7 +78,7 @@ const JobDetails = () => {
                                     <span className="label-text">Email</span>
                                 </label>
                                 <label className="input-group ">
-                                    <input type="email" defaultValue={user?.email} readOnly name="email" placeholder="email" className="input input-bordered w-full" />
+                                    <input type="email" defaultValue={user?.email} readOnly name="biEmail" placeholder="email" className="input input-bordered w-full" />
                                 </label>
                             </div>
                             <div className="form-control w-full">
@@ -86,7 +86,7 @@ const JobDetails = () => {
                                     <span className="label-text">Buyer Email</span>
                                 </label>
                                 <label className="input-group ">
-                                    <input type="email" defaultValue={email} readOnly name="biEmail" placeholder="email" className="input input-bordered w-full" />
+                                    <input type="email" defaultValue={email} readOnly name="email" placeholder="email" className="input input-bordered w-full" />
                                 </label>
                             </div>
 

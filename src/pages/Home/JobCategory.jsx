@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import CategoryItems from './CategoryItems';
@@ -7,12 +7,17 @@ import CategoryItems from './CategoryItems';
 
 const JobCategory = () => {
     const [jobs, setJobs] = useState([])
+    const [defaultCategory, setDefaultCategory] = useState('web-development');
     const handleCategory = (category) => {
         axios.get(`http://localhost:5000/jobs/${category}`)
             .then(res => {
                 setJobs(res.data)
             })
     }
+    useEffect(() => {
+        setDefaultCategory('web-development')
+        handleCategory(defaultCategory);
+    }, [defaultCategory]);
     return (
         <div>
             <Tabs>
