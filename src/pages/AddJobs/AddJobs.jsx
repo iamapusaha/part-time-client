@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import { AuthContext } from '../../Provider/AuthProvider';
+import axios from 'axios';
 
 const AddJobs = () => {
     const MySwal = withReactContent(Swal)
@@ -16,8 +17,20 @@ const AddJobs = () => {
         const maxPrice = form.maxPrice.value;
         const minPrice = form.minPrice.value;
         const discription = form.discription.value;
-        const newProduct = { title, email, date, category, minPrice, maxPrice, discription }
-        console.log(newProduct);
+        const newJob = { title, email, date, category, minPrice, maxPrice, discription }
+        console.log(newJob);
+        axios.post('http://localhost:5000/jobs', newJob)
+            .then(res => {
+                console.log(res.data);
+                if (res.data) {
+                    MySwal.fire(
+                        'WOW!',
+                        'added new jobs!',
+                        'success'
+                    )
+                }
+            })
+
         // fetch('https://car-hut-server-sand.vercel.app/product', {
         //     method: "POST",
         //     headers: {
