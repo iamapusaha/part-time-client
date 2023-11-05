@@ -24,17 +24,17 @@ const JobCategory = () => {
 
                 <TabPanel>
                     {
-                        jobs.map(job => <CategoryItems key={job.id} job={job}></CategoryItems>)
+                        jobs.map((job, idx) => <CategoryItems key={idx} job={job}></CategoryItems>)
                     }
                 </TabPanel>
                 <TabPanel>
                     {
-                        jobs.map(job => <CategoryItems key={job.id} job={job}></CategoryItems>)
+                        jobs.map((job, idx) => <CategoryItems key={idx} job={job}></CategoryItems>)
                     }
                 </TabPanel>
                 <TabPanel>
                     {
-                        jobs.map(job => <CategoryItems key={job.id} job={job}></CategoryItems>)
+                        jobs.map((job, idx) => <CategoryItems key={idx} job={job}></CategoryItems>)
                     }
                 </TabPanel>
             </Tabs>

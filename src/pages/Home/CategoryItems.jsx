@@ -7,7 +7,7 @@ const CategoryItems = ({ job }) => {
     return (
         <div>
             <h1>{title}</h1>
-            <Link to={_id}>bid now</Link>
+            <Link to={`/jobs/${_id}`}>bid now</Link>
         </div>
     );
 };
