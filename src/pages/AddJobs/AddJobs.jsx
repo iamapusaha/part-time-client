@@ -30,25 +30,6 @@ const AddJobs = () => {
                     )
                 }
             })
-
-        // fetch('https://car-hut-server-sand.vercel.app/product', {
-        //     method: "POST",
-        //     headers: {
-        //         "content-type": "application/json"
-        //     },
-        //     body: JSON.stringify(newProduct)
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         console.log(data);
-        //         if (data) {
-        //             MySwal.fire(
-        //                 'Good job!',
-        //                 'added new product!',
-        //                 'success'
-        //             )
-        //         }
-        //     })
     }
     return (
         <div className="container mx-auto my-6 bg-[#F6F6F6] p-5 rounded">
@@ -88,9 +69,9 @@ const AddJobs = () => {
                         </label>
                         <select className="select w-full" name="category">
                             <option disabled selected>What is your job category?</option>
-                            <option>web development</option>
-                            <option>digital marketing</option>
-                            <option>graphics design</option>
+                            <option>web-development</option>
+                            <option>digital-marketing</option>
+                            <option>graphics-design</option>
                         </select>
                     </div>
                 </div>
