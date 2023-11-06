@@ -9,7 +9,7 @@ const JobCategory = () => {
     const [jobs, setJobs] = useState([])
     const [defaultCategory, setDefaultCategory] = useState('web-development');
     const handleCategory = (category) => {
-        axios.get(`http://localhost:5000/jobs/${category}`)
+        axios.get(`http://localhost:5000/jobs/${category}`, { withCredentials: true })
             .then(res => {
                 setJobs(res.data)
             })

@@ -10,7 +10,7 @@ const NavBar = () => {
     const menuItems = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/add-jobs'>Add Job</Link></li>
-        <li><Link to='/my-jobs'>My Hobs</Link></li>
+        <li><Link to='/my-posted-jobs'>My posted jobs</Link></li>
         <li><Link to='/my-bids'>My Bids</Link></li>
         <li><Link to='/bid-request'>Bid Request</Link></li>
     </>
