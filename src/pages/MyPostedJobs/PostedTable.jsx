@@ -1,13 +1,15 @@
 
 import PropTypes from 'prop-types';
 
-const PostedTable = ({ job }) => {
-    const { title, email, date, photo, category, minPrice, maxPrice, discription } = job;
+const PostedTable = ({ job, handleDeleteJob }) => {
+    const { _id, title, email, date, photo, category, minPrice, maxPrice, discription } = job;
     return (
         <tr>
             <th>
                 <label>
-                    <input type="checkbox" className="checkbox" />
+                    <button onClick={() => handleDeleteJob(_id)} className="btn btn-circle btn-outline">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                    </button>
                 </label>
             </th>
             <td>
@@ -23,7 +25,7 @@ const PostedTable = ({ job }) => {
                 <span className="badge badge-ghost badge-sm">{email}</span>
             </td>
             <td>{title}</td>
-            <td>{discription.length > 20 ? discription.slice(0, 20) : discription}</td>
+            <td>{discription.length > 30 ? discription.slice(0, 30) : discription}</td>
             <td>{date}</td>
             <td>{category}</td>
             <td>{minPrice}</td>
@@ -36,7 +38,8 @@ const PostedTable = ({ job }) => {
 };
 
 PostedTable.propTypes = {
-    job: PropTypes.object
+    job: PropTypes.object,
+    handleDeleteJob: PropTypes.func
 };
 
 export default PostedTable;
