@@ -45,7 +45,7 @@ const NavBar = () => {
                     {menuItems}
                 </ul>
             </div>
-            <div className="navbar-end">
+            <div className="navbar-end z-30">
                 {
                     user ? <>
                         <div className="dropdown dropdown-end">
