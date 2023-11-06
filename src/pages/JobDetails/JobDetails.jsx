@@ -10,7 +10,7 @@ import axios from 'axios';
 import { useLoaderData } from "react-router-dom";
 
 const JobDetails = () => {
-    const { title, email, date } = useLoaderData();
+    const { title, email, date, photo } = useLoaderData();
     const MySwal = withReactContent(Swal)
     const { user } = useContext(AuthContext)
 
@@ -24,6 +24,7 @@ const JobDetails = () => {
         const price = form.price.value;
         const newBid = {
             title,
+            photo,
             buyerEmail: email,
             bidderEmail: biEmail,
             BuyerDate: date,

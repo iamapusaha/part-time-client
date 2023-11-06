@@ -19,7 +19,7 @@ const JobCategory = () => {
         handleCategory(defaultCategory);
     }, [defaultCategory]);
     return (
-        <div>
+        <div className='my-16'>
             <Tabs>
                 <TabList>
                     <Tab onClick={() => handleCategory('web-development')}>web development</Tab>
@@ -28,14 +28,18 @@ const JobCategory = () => {
                 </TabList>
 
                 <TabPanel>
-                    {
-                        jobs.map((job, idx) => <CategoryItems key={idx} job={job}></CategoryItems>)
-                    }
+                    <div className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5'>
+                        {
+                            jobs.map((job, idx) => <CategoryItems key={idx} job={job}></CategoryItems>)
+                        }
+                    </div>
                 </TabPanel>
                 <TabPanel>
-                    {
-                        jobs.map((job, idx) => <CategoryItems key={idx} job={job}></CategoryItems>)
-                    }
+                    <div>
+                        {
+                            jobs.map((job, idx) => <CategoryItems key={idx} job={job}></CategoryItems>)
+                        }
+                    </div>
                 </TabPanel>
                 <TabPanel>
                     {

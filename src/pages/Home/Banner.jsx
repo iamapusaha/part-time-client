@@ -2,7 +2,7 @@ import Marquee from "react-fast-marquee";
 
 const Banner = () => {
     return (
-        <div className="my-10 rounded-lg lg:flex justify-center items-center bg-black h-[700px] gap-5">
+        <div className="my-10 rounded-lg lg:flex justify-center items-center bg-black lg:h-[700px] h-fit gap-5">
             <div className="lg:m-10 m-0 lg:p-0 p-3 lg:w-1/3 w-full text-white space-y-6">
                 <h1 className="text-6xl ">Part Time</h1>
                 <p>PartTime is a vibrant marketplace offering a wide range of services including web development, graphic design, and digital marketing. It’s a platform where sellers meet buyers, fostering a community that thrives on creativity and innovation. Whether you’re a business seeking professional services or a freelancer looking to monetize your skills, PartTime is your go-to destination.</p>
@@ -10,7 +10,7 @@ const Banner = () => {
             </div>
             <div className="lg:w-2/3 w-full">
                 <Marquee speed={100} direction="right">
-                    <div className="absolute inset-0 "></div>
+
                     <img
                         src="https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHdlYiUyMGRldmVsb3BtZW50fGVufDB8fDB8fHww"
                         className="h-[600px]"
