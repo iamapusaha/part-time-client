@@ -15,7 +15,7 @@ const CategoryItems = ({ job }) => {
                 </div>
                 <div className="text-center">
                     <h1 className="font-bold text-xl p-2">{title}</h1>
-                    <h1 className="font-semibold"><h2>Deadline: {date}</h2></h1>
+                    <h2 className="font-semibold">Deadline: {date}</h2>
                     <h1 className="font-semibold">Price range: {minPrice} to {maxPrice}</h1>
                     <div className="flex justify-center">
                         <p className="font-semibold">
