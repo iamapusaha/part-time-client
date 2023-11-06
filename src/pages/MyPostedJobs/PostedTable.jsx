@@ -1,5 +1,6 @@
 
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const PostedTable = ({ job, handleDeleteJob }) => {
     const { _id, title, email, date, photo, category, minPrice, maxPrice, discription } = job;
@@ -31,8 +32,9 @@ const PostedTable = ({ job, handleDeleteJob }) => {
             <td>{minPrice}</td>
             <td>{maxPrice}</td>
             <th>
-                <button className="btn btn-ghost btn-xs">update</button>
+                <Link to={`/update-job/${_id}`} className="btn btn-ghost btn-xs">update</Link>
             </th>
+
         </tr>
     );
 };
@@ -41,5 +43,6 @@ PostedTable.propTypes = {
     job: PropTypes.object,
     handleDeleteJob: PropTypes.func
 };
+
 
 export default PostedTable;

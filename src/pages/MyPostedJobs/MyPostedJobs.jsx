@@ -19,6 +19,7 @@ const MyPostedJobs = () => {
                 setPostedJob(res.data);
             })
     }, [url])
+
     const handleDeleteJob = id => {
         MySwal.fire({
             title: 'Are you sure?',
@@ -85,6 +86,7 @@ const MyPostedJobs = () => {
 
     );
 };
+
 
 MyPostedJobs.propTypes = {
 

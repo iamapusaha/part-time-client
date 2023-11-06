@@ -1,13 +1,19 @@
-import { useContext } from 'react';
+
+// import PropTypes from 'prop-types';
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
-import { AuthContext } from '../../Provider/AuthProvider';
+import { useContext } from "react";
+import { useLoaderData, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
 import axios from 'axios';
 
-const AddJobs = () => {
+const UpdateJob = () => {
+    const navigate = useNavigate()
     const MySwal = withReactContent(Swal)
     const { user } = useContext(AuthContext)
-    const handleAddJob = e => {
+    const jobData = useLoaderData()
+    const { _id, title, date, photo, category, minPrice, maxPrice, discription } = jobData;
+    const handleUpdateJob = e => {
         e.preventDefault()
         const form = e.target;
         const title = form.title.value;
@@ -20,29 +26,31 @@ const AddJobs = () => {
         const photo = form.photo.value;
         const newJob = { title, email, date, photo, category, minPrice, maxPrice, discription }
         console.log(newJob);
-        axios.post('http://localhost:5000/jobs', newJob)
+        const url = `http://localhost:5000/jobs/${_id}`
+        axios.patch(url, newJob)
             .then(res => {
                 console.log(res.data);
                 if (res.data) {
                     MySwal.fire(
                         'WOW!',
-                        'added new jobs!',
+                        'job updated!',
                         'success'
                     )
+                    navigate('/my-posted-jobs')
                 }
             })
     }
     return (
         <div className="container mx-auto my-6 bg-[#F6F6F6] p-5 rounded">
-            <h1 className="text-5xl text-center my-2">Add New Job</h1>
-            <form onSubmit={handleAddJob}>
+            <h1 className="text-5xl text-center my-2">Update Job</h1>
+            <form onSubmit={handleUpdateJob}>
                 <div className="md:flex gap-3 px-2 md:px-1 mb-6">
                     <div className="form-control w-full">
                         <label className="label">
                             <span className="label-text">Job Title</span>
                         </label>
                         <label className="input-group ">
-                            <input type="text" name="title" placeholder="Job Title" className="input input-bordered w-full" />
+                            <input type="text" defaultValue={title} name="title" placeholder="Job Title" className="input input-bordered w-full" />
                         </label>
                     </div>
                     <div className="form-control w-full">
@@ -61,14 +69,14 @@ const AddJobs = () => {
                             <span className="label-text">Deadline</span>
                         </label>
                         <label className="input-group ">
-                            <input type="date" name="date" className="input input-bordered w-full" />
+                            <input type="date" defaultValue={date} name="date" className="input input-bordered w-full" />
                         </label>
                     </div>
                     <div className="form-control w-full">
                         <label className="label">
                             <span className="label-text">Category</span>
                         </label>
-                        <select className="select w-full" name="category">
+                        <select className="select w-full" defaultValue={category} name="category">
                             <option disabled selected>What is your job category?</option>
                             <option>web-development</option>
                             <option>digital-marketing</option>
@@ -82,7 +90,7 @@ const AddJobs = () => {
                             <span className="label-text">Minimum price</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name="minPrice" placeholder="Minimum price" className="input input-bordered w-full" />
+                            <input type="text" defaultValue={minPrice} name="minPrice" placeholder="Minimum price" className="input input-bordered w-full" />
                         </label>
                     </div>
                     <div className="form-control w-full">
@@ -90,7 +98,7 @@ const AddJobs = () => {
                             <span className="label-text">Maximum price</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name="maxPrice" placeholder="Maximum price" className="input input-bordered w-full" />
+                            <input type="text" defaultValue={maxPrice} name="maxPrice" placeholder="Maximum price" className="input input-bordered w-full" />
                         </label>
                     </div>
                 </div>
@@ -99,7 +107,7 @@ const AddJobs = () => {
                         <label className="label">
                             <span className="label-text">Photo Url</span>
                         </label>
-                        <input type="text" placeholder="photo url" name="photo" className="input input-bordered" required />
+                        <input type="text" defaultValue={photo} placeholder="photo url" name="photo" className="input input-bordered" required />
                     </div>
                 </div>
                 <div className="md:flex gap-3 px-2 md:px-1 mb-6">
@@ -108,14 +116,18 @@ const AddJobs = () => {
                             <span className="label-text">Product Description</span>
                         </label>
                         <label className="input-group ">
-                            <textarea name="discription" className="textarea textarea-bordered w-full" placeholder="Description"></textarea>
+                            <textarea name="discription" defaultValue={discription} className="textarea textarea-bordered w-full" placeholder="Description"></textarea>
                         </label>
                     </div>
                 </div>
-                <input className="btn btn-block bg-[#4D55D0] text-white" type="submit" value="Add Job" />
+                <input className="btn btn-block bg-[#4D55D0] text-white" type="submit" value="update Job" />
             </form>
         </div>
     );
 };
 
-export default AddJobs;
+UpdateJob.propTypes = {
+
+};
+
+export default UpdateJob;
