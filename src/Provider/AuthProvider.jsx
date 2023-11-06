@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import { createContext, useEffect, useState } from "react";
 import auth from "../firebase/firebase.config";
+import axios from "axios";
 
 export const AuthContext = createContext(null)
 const AuthProvider = ({ children }) => {
@@ -36,7 +37,18 @@ const AuthProvider = ({ children }) => {
             if (currentUser) {
                 setUser(currentUser)
                 setLoader(false)
-                console.log("form obeser", currentUser);
+                const loggedUser = { email: currentUser.email }
+                if (currentUser) {
+                    axios.post('http://localhost:5000/jwt', loggedUser, { withCredentials: true })
+                        .then(res => {
+                            console.log(res.data);
+                        })
+                } else {
+                    axios.post('http://localhost:5000/jwt', loggedUser, { withCredentials: true })
+                        .then(res => {
+                            console.log(res.data);
+                        })
+                }
             }
             else {
                 setLoader(false)
