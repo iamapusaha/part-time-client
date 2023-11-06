@@ -17,7 +17,8 @@ const AddJobs = () => {
         const maxPrice = form.maxPrice.value;
         const minPrice = form.minPrice.value;
         const discription = form.discription.value;
-        const newJob = { title, email, date, category, minPrice, maxPrice, discription }
+        const photo = form.photo.value;
+        const newJob = { title, email, date, photo, category, minPrice, maxPrice, discription }
         console.log(newJob);
         axios.post('http://localhost:5000/jobs', newJob)
             .then(res => {
@@ -33,7 +34,7 @@ const AddJobs = () => {
     }
     return (
         <div className="container mx-auto my-6 bg-[#F6F6F6] p-5 rounded">
-            <h1 className="text-5xl text-center my-2">Add New Product</h1>
+            <h1 className="text-5xl text-center my-2">Add New Job</h1>
             <form onSubmit={handleAddProduct}>
                 <div className="md:flex gap-3 px-2 md:px-1 mb-6">
                     <div className="form-control w-full">
@@ -91,6 +92,14 @@ const AddJobs = () => {
                         <label className="input-group">
                             <input type="text" name="maxPrice" placeholder="Maximum price" className="input input-bordered w-full" />
                         </label>
+                    </div>
+                </div>
+                <div className="md:flex gap-3 px-2 md:px-1 mb-6">
+                    <div className="form-control w-full">
+                        <label className="label">
+                            <span className="label-text">Photo Url</span>
+                        </label>
+                        <input type="text" placeholder="photo url" name="photo" className="input input-bordered" required />
                     </div>
                 </div>
                 <div className="md:flex gap-3 px-2 md:px-1 mb-6">
