@@ -14,6 +14,21 @@ const BidRequest = () => {
                 setBidRequest(res.data);
             })
     }, [url])
+    const handleBidAccept = id => {
+        const url = `http://localhost:5000/bids/${id}`;
+        axios.patch(url, { status: 'accept' })
+            .then(res => {
+                console.log(res.data);
+                if (res.data.modifiedCount > 0) {
+                    // update state
+                    const remaining = bidRequest.filter(request => request._id !== id);
+                    const updated = bidRequest.find(request => request._id === id);
+                    updated.status = 'accept'
+                    const newBidStatus = [updated, ...remaining];
+                    setBidRequest(newBidStatus);
+                }
+            })
+    }
     return (
         <div className="overflow-x-auto">
             <table className="table">
@@ -33,6 +48,7 @@ const BidRequest = () => {
                         bidRequest.map(request => <BidRequestItem
                             key={request._id}
                             request={request}
+                            handleBidAccept={handleBidAccept}
                         ></BidRequestItem>)
                     }
 
