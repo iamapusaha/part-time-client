@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 
 
 const BidRequestItem = ({ request, handleBidAccept, handleBidReject }) => {
-    const { _id, title, bidderEmail, price, status } = request;
+    const { _id, title, bidderEmail, price, status, bidderDate } = request;
     return (
         <tr>
             <th>{title}</th>
             <td>{bidderEmail}</td>
+            <td>{bidderDate}</td>
             <td>$ {price}</td>
             <td>
                 {
