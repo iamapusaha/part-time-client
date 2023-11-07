@@ -34,7 +34,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/add-jobs',
-                element: <AddJobs></AddJobs>
+                element: <PrivateRouter><AddJobs></AddJobs></PrivateRouter>
             },
             {
                 path: '/jobs/:id',
@@ -52,11 +52,11 @@ const router = createBrowserRouter([
             },
             {
                 path: '/my-bids',
-                element: <MyBids></MyBids>
+                element: <PrivateRouter><MyBids></MyBids></PrivateRouter>
             },
             {
                 path: '/bid-request',
-                element: <BidRequest></BidRequest>
+                element: <PrivateRouter><BidRequest></BidRequest></PrivateRouter>
             }
         ]
     }
