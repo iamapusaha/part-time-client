@@ -14,6 +14,21 @@ const MyBids = () => {
                 setMyBids(res.data);
             })
     }, [url])
+    const handleBidComplete = id => {
+        const url = `http://localhost:5000/bids/${id}`;
+        axios.patch(url, { status: 'complete' })
+            .then(res => {
+                console.log(res.data);
+                if (res.data.modifiedCount > 0) {
+                    // update state
+                    const remaining = myBids.filter(bid => bid._id !== id);
+                    const updated = myBids.find(bid => bid._id === id);
+                    updated.status = 'complete'
+                    const newBidStatus = [updated, ...remaining];
+                    setMyBids(newBidStatus);
+                }
+            })
+    }
     return (
         <div className="overflow-x-auto">
             <table className="table table-zebra">
@@ -29,7 +44,11 @@ const MyBids = () => {
                 </thead>
                 <tbody>
                     {
-                        myBids.map(bid => <MyBidsItem key={bid._id} bid={bid}></MyBidsItem>)
+                        myBids.map(bid => <MyBidsItem
+                            key={bid._id}
+                            bid={bid}
+                            handleBidComplete={handleBidComplete}
+                        ></MyBidsItem>)
                     }
                 </tbody>
             </table>

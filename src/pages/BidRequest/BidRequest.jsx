@@ -29,6 +29,21 @@ const BidRequest = () => {
                 }
             })
     }
+    const handleBidReject = id => {
+        const url = `http://localhost:5000/bids/${id}`;
+        axios.patch(url, { status: 'reject' })
+            .then(res => {
+                console.log(res.data);
+                if (res.data.modifiedCount > 0) {
+                    // update state
+                    const remaining = bidRequest.filter(request => request._id !== id);
+                    const updated = bidRequest.find(request => request._id === id);
+                    updated.status = 'reject'
+                    const newBidStatus = [updated, ...remaining];
+                    setBidRequest(newBidStatus);
+                }
+            })
+    }
     return (
         <div className="overflow-x-auto">
             <table className="table">
@@ -49,6 +64,7 @@ const BidRequest = () => {
                             key={request._id}
                             request={request}
                             handleBidAccept={handleBidAccept}
+                            handleBidReject={handleBidReject}
                         ></BidRequestItem>)
                     }
 

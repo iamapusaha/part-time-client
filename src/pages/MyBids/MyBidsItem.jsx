@@ -1,25 +1,38 @@
 
 import PropTypes from 'prop-types';
 
-import { Link } from "react-router-dom";
-
-const MyBidsItem = ({ bid }) => {
-    const { _id, title, buyerEmail, BuyerDate } = bid;
+const MyBidsItem = ({ bid, handleBidComplete }) => {
+    const { _id, title, buyerEmail, BuyerDate, status } = bid;
     return (
         <tr>
             <th>{title}</th>
             <td>{buyerEmail}</td>
             <td>{BuyerDate}</td>
-            <td>pending</td>
+            <td>
+                {
+                    status === 'accept' ? <span className="font-bold text-primary">In Progress</span> :
+                        status === 'reject' ? <span className="font-bold text-error">Canceled</span> :
+                            status === 'complete' ? <span className="font-bold text-success">Complete</span> :
+                                <span className="font-bold text-primary">{status || 'Pending'}</span>
+                }
+            </td>
             <th>
-                <Link to={`/update-job/${_id}`} className="btn btn-ghost btn-xs">complete</Link>
+
+                {
+                    status === 'reject' || status === 'complete' ?
+                        <button disabled className="btn">Complete</button> :
+                        status === 'accept' ?
+                            <button onClick={() => handleBidComplete(_id)} className="btn">Complete</button> :
+                            null
+                }
             </th>
         </tr>
     );
 };
 
 MyBidsItem.propTypes = {
-    bid: PropTypes.object
+    bid: PropTypes.object,
+    handleBidComplete: PropTypes.func
 };
 
 export default MyBidsItem;
