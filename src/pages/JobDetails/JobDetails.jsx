@@ -7,12 +7,13 @@ import { AuthContext } from '../../Provider/AuthProvider';
 import axios from 'axios';
 
 
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 
 const JobDetails = () => {
     const { title, photo, discription, date, minPrice, maxPrice, email } = useLoaderData();
     const MySwal = withReactContent(Swal)
     const { user } = useContext(AuthContext)
+    const nevigate = useNavigate()
 
     const handleBidJob = e => {
         e.preventDefault()
@@ -40,6 +41,8 @@ const JobDetails = () => {
                         'your bid added!',
                         'success'
                     )
+                    nevigate('/my-bids')
+
                 }
             })
     }
