@@ -21,7 +21,7 @@ const AddJobs = () => {
         const photo = form.photo.value;
         const newJob = { title, email, date, photo, category, minPrice, maxPrice, discription }
         console.log(newJob);
-        axios.post('http://localhost:5000/jobs', newJob)
+        axios.post('http://localhost:5000/jobs', newJob, { withCredentials: true })
             .then(res => {
                 console.log(res.data);
                 if (res.data) {

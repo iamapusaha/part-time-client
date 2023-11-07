@@ -38,8 +38,8 @@ const router = createBrowserRouter([
             },
             {
                 path: '/jobs/:id',
-                element: <JobDetails></JobDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/jobs/v1/${params.id}`)
+                element: <PrivateRouter><JobDetails></JobDetails></PrivateRouter>,
+                loader: ({ params }) => fetch(`http://localhost:5000/jobs/v1/${params.id}`, { credentials: "include" })
             },
             {
                 path: '/my-posted-jobs',

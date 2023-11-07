@@ -15,7 +15,7 @@ const MyPostedJobs = () => {
     // console.log(postedJob);
     const url = `http://localhost:5000/jobs?email=${user?.email}`;
     useEffect(() => {
-        axios.get(url)
+        axios.get(url, { withCredentials: true })
             .then(res => {
                 setPostedJob(res.data);
             })

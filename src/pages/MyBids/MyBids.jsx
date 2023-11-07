@@ -10,7 +10,7 @@ const MyBids = () => {
     const [myBids, setMyBids] = useState([])
     const url = `http://localhost:5000/bidder?email=${user?.email}`;
     useEffect(() => {
-        axios.get(url)
+        axios.get(url, { withCredentials: true })
             .then(res => {
                 setMyBids(res.data);
             })

@@ -13,7 +13,6 @@ const JobDetails = () => {
     const { title, photo, discription, date, minPrice, maxPrice, email } = useLoaderData();
     const MySwal = withReactContent(Swal)
     const { user } = useContext(AuthContext)
-    console.log(user.email, email);
 
     const handleBidJob = e => {
         e.preventDefault()
@@ -110,7 +109,7 @@ const JobDetails = () => {
 
                         </div>
                         {
-                            email === user.email ?
+                            email === user?.email ?
                                 <input disabled="disabled" className=" btn btn-block bg-[#121216] text-white" type="submit" value="Bid on the project" />
                                 : <input className="btn btn-block bg-[#4D55D0] text-white" type="submit" value="Bid on the project" />
                         }
