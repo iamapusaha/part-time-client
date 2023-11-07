@@ -12,7 +12,8 @@ const UpdateJob = () => {
     const navigate = useNavigate()
     const MySwal = withReactContent(Swal)
     const { user } = useContext(AuthContext)
-    const jobData = useLoaderData()
+    const jobData = useLoaderData();
+    console.log(jobData);
     const { _id, title, date, photo, category, minPrice, maxPrice, discription } = jobData;
     const handleUpdateJob = e => {
         e.preventDefault()

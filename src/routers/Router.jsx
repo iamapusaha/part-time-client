@@ -48,7 +48,7 @@ const router = createBrowserRouter([
             {
                 path: '/update-job/:id',
                 element: <UpdateJob></UpdateJob>,
-                loader: ({ params }) => fetch(`http://localhost:5000/jobs/v1/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/jobs/v1/${params.id}`, { credentials: "include" })
             },
             {
                 path: '/my-bids',

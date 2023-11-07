@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
+import logo from '../../../assets/logo.png'
 
 const NavBar = () => {
     const { user, logOut } = useContext(AuthContext)
@@ -38,7 +39,9 @@ const NavBar = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">Part Time</a>
+                <div>
+                    <img src={logo} alt="" />
+                </div>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
