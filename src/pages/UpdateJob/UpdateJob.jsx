@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import axios from 'axios';
+import { Helmet } from 'react-helmet-async';
 
 const UpdateJob = () => {
     const navigate = useNavigate()
@@ -42,6 +43,9 @@ const UpdateJob = () => {
     }
     return (
         <div className="container mx-auto my-6 bg-[#F6F6F6] p-5 rounded">
+            <Helmet>
+                <title>Part Time || Update Job</title>
+            </Helmet>
             <h1 className="text-5xl text-center my-2">Update Job</h1>
             <form onSubmit={handleUpdateJob}>
                 <div className="md:flex gap-3 px-2 md:px-1 mb-6">

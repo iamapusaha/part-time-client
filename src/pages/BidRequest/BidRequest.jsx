@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import axios from "axios";
 import BidRequestItem from "./BidRequestItem";
+import { Helmet } from "react-helmet-async";
 
 
 const BidRequest = () => {
@@ -46,6 +47,9 @@ const BidRequest = () => {
     }
     return (
         <div className="overflow-x-auto">
+            <Helmet>
+                <title>Part Time || Bid Request</title>
+            </Helmet>
             <table className="table">
                 {/* head */}
                 <thead>

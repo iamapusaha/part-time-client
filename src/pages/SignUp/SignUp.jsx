@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import { AuthContext } from '../../Provider/AuthProvider';
+import { Helmet } from 'react-helmet-async';
 // import PropTypes from 'prop-types';
 
 const SignUp = () => {
@@ -66,6 +67,9 @@ const SignUp = () => {
     }
     return (
         <div>
+            <Helmet>
+                <title>Part Time || SignUp</title>
+            </Helmet>
             <div className=" my-16 px-3 md:px-0">
                 <h1 className="text-4xl font-semibold text-center mb-3">Please SignUp</h1>
                 <div className="md:w-3/4 lg:w-1/2 mx-auto border-b-2 border-[#FFF781] px-3 md:px-1 mb-4"></div>

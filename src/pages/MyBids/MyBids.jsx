@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import axios from "axios";
 import MyBidsItem from "./MyBidsItem";
+import { Helmet } from "react-helmet-async";
 
 
 const MyBids = () => {
@@ -31,6 +32,9 @@ const MyBids = () => {
     }
     return (
         <div className="overflow-x-auto">
+            <Helmet>
+                <title>Part Time || My Bids</title>
+            </Helmet>
             <table className="table table-zebra">
                 {/* head */}
                 <thead>

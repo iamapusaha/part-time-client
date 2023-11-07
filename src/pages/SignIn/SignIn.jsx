@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import { AuthContext } from "../../Provider/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -40,6 +41,9 @@ const SignIn = () => {
     }
     return (
         <div className="my-16 px-3 md:px-0">
+            <Helmet>
+                <title>Part Time || SignIn</title>
+            </Helmet>
             <h1 className="text-4xl font-semibold text-center mb-3">SignIn with your account</h1>
             <div className="md:w-3/4 lg:w-1/2 mx-auto border-b-2 border-[#FFF781] px-3 md:px-1 mb-4"></div>
             <form onSubmit={handleSignIn} className="md:w-3/4 lg:w-1/2 mx-auto">

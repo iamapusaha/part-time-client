@@ -6,6 +6,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import axios from "axios";
 import PostedTable from "./PostedTable";
+import { Helmet } from 'react-helmet-async';
 
 const MyPostedJobs = () => {
     const MySwal = withReactContent(Swal)
@@ -49,14 +50,18 @@ const MyPostedJobs = () => {
         })
     }
     return (
+
         <div className="overflow-x-auto">
+            <Helmet>
+                <title>Part Time || Posted Job</title>
+            </Helmet>
             <table className="table">
                 {/* head */}
                 <thead>
                     <tr>
                         <th>
                             <label>
-                                <button className="btn btn-square btn-outline">
+                                <button disabled className="btn btn-square btn-outline">
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
                                 </button>
                             </label>

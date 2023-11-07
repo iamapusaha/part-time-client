@@ -3,6 +3,7 @@ import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import { AuthContext } from '../../Provider/AuthProvider';
 import axios from 'axios';
+import { Helmet } from 'react-helmet-async';
 
 const AddJobs = () => {
     const MySwal = withReactContent(Swal)
@@ -34,6 +35,9 @@ const AddJobs = () => {
     }
     return (
         <div className="container mx-auto my-6 bg-[#F6F6F6] p-5 rounded">
+            <Helmet>
+                <title>Part Time || Add Jobs</title>
+            </Helmet>
             <h1 className="text-5xl text-center my-2">Add New Job</h1>
             <form onSubmit={handleAddJob}>
                 <div className="md:flex gap-3 px-2 md:px-1 mb-6">
