@@ -10,6 +10,7 @@ import UpdateJob from "../pages/UpdateJob/UpdateJob";
 import MyBids from "../pages/MyBids/MyBids";
 import BidRequest from "../pages/BidRequest/BidRequest";
 import PrivateRouter from "./PrivateRouter";
+import Error404 from "../pages/Error404/Error404";
 
 
 
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
     {
         path: '/',
         element: <Root></Root>,
+        errorElement: <Error404></Error404>,
         children: [
             {
                 path: '/',
