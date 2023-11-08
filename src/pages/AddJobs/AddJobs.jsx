@@ -46,7 +46,7 @@ const AddJobs = () => {
                             <span className="label-text">Job Title</span>
                         </label>
                         <label className="input-group ">
-                            <input type="text" name="title" placeholder="Job Title" className="input input-bordered w-full" />
+                            <input type="text" required name="title" placeholder="Job Title" className="input input-bordered w-full" />
                         </label>
                     </div>
                     <div className="form-control w-full">
@@ -54,7 +54,7 @@ const AddJobs = () => {
                             <span className="label-text">Email</span>
                         </label>
                         <label className="input-group ">
-                            <input type="email" defaultValue={user?.email} readOnly name="email" placeholder="email" className="input input-bordered w-full" />
+                            <input type="email" required defaultValue={user?.email} readOnly name="email" placeholder="email" className="input input-bordered w-full" />
                         </label>
                     </div>
 
@@ -65,14 +65,14 @@ const AddJobs = () => {
                             <span className="label-text">Deadline</span>
                         </label>
                         <label className="input-group ">
-                            <input type="date" name="date" className="input input-bordered w-full" />
+                            <input type="date" required name="date" className="input input-bordered w-full" />
                         </label>
                     </div>
                     <div className="form-control w-full">
                         <label className="label">
                             <span className="label-text">Category</span>
                         </label>
-                        <select className="select w-full" name="category">
+                        <select className="select w-full" required name="category">
                             <option disabled selected>What is your job category?</option>
                             <option>web-development</option>
                             <option>digital-marketing</option>
@@ -86,7 +86,7 @@ const AddJobs = () => {
                             <span className="label-text">Minimum price</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name="minPrice" placeholder="Minimum price" className="input input-bordered w-full" />
+                            <input type="text" required name="minPrice" placeholder="Minimum price" className="input input-bordered w-full" />
                         </label>
                     </div>
                     <div className="form-control w-full">
@@ -94,7 +94,7 @@ const AddJobs = () => {
                             <span className="label-text">Maximum price</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name="maxPrice" placeholder="Maximum price" className="input input-bordered w-full" />
+                            <input type="text" required name="maxPrice" placeholder="Maximum price" className="input input-bordered w-full" />
                         </label>
                     </div>
                 </div>
@@ -103,7 +103,7 @@ const AddJobs = () => {
                         <label className="label">
                             <span className="label-text">Photo Url</span>
                         </label>
-                        <input type="text" placeholder="photo url" name="photo" className="input input-bordered" required />
+                        <input type="text" required placeholder="photo url" name="photo" className="input input-bordered" />
                     </div>
                 </div>
                 <div className="md:flex gap-3 px-2 md:px-1 mb-6">
@@ -116,7 +116,7 @@ const AddJobs = () => {
                         </label>
                     </div>
                 </div>
-                <input className="btn btn-block bg-[#4D55D0] text-white" type="submit" value="Add Job" />
+                <input className="btn btn-block bg-[#6f7191] text-white" type="submit" value="Add Job" />
             </form>
         </div>
     );

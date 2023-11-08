@@ -125,7 +125,7 @@ const UpdateJob = () => {
                         </label>
                     </div>
                 </div>
-                <input className="btn btn-block bg-[#4D55D0] text-white" type="submit" value="update Job" />
+                <input className="btn btn-block bg-[#6f7191] text-white" type="submit" value="update Job" />
             </form>
         </div>
     );
