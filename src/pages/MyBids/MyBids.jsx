@@ -31,7 +31,7 @@ const MyBids = () => {
             })
     }
     return (
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto my-12">
             <Helmet>
                 <title>Part Time || My Bids</title>
             </Helmet>

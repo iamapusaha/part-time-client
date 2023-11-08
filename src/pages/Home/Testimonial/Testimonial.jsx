@@ -48,7 +48,7 @@ const Testimonial = () => {
                     </div>
                     <div className="text fontcolor background" data-swiper-parallax="-100">
                         <p>
-                            recently shared his insightful review about our marketplace. He enthusiastically stated, “This platform is a phenomenal game-changer in the digital marketplace landscape. It seamlessly bridges the gap between sellers and buyers, reminiscent of renowned platforms like Fiverr and Upwork. The service quality is consistently top-notch, making it an indispensable tool for both sellers seeking to showcase their skills and buyers looking for quality work. The user-friendly interface, coupled with a wide array of services, makes it a go-to marketplace for all. I am genuinely impressed by the efficiency and professionalism this platform offers.” His words truly encapsulate the essence of our marketplace
+                            recently shared his insightful review about our marketplace. He enthusiastically stated, “This platform is a phenomenal game-changer in the digital marketplace landscape. It seamlessly bridges the gap between sellers and buyers, reminiscent of renowned platforms like Fiverr and Upwork. The service quality is consistently top-notch, making it an indispensable tool for both sellers seeking.
                         </p>
                     </div>
                 </SwiperSlide>
@@ -61,7 +61,7 @@ const Testimonial = () => {
                     </div>
                     <div className="text fontcolor background" data-swiper-parallax="-100">
                         <p>
-                            also shared her thoughts about our marketplace. She expressed, “This platform is truly a revelation in the digital world. It’s a vibrant marketplace that reminds me of Fiverr and Upwork, but with its unique charm. The quality of service is exceptional, providing a reliable space for sellers to connect with potential buyers. The diversity of skills available is impressive, catering to a wide range of needs. The platform’s commitment to user satisfaction is evident in its intuitive design and efficient operation. It’s a marketplace that stands out for its quality, diversity, and user-friendliness. I highly recommend it to anyone seeking professional services online.” Her endorsement further validates the quality and reliability of our platform
+                            also shared her thoughts about our marketplace. She expressed, “This platform is truly a revelation in the digital world. It’s a vibrant marketplace that reminds me of Fiverr and Upwork, but with its unique charm. The quality of service is exceptional, providing a reliable space for sellers to connect with potential buyers. The diversity of skills available is impressive, catering to a wide range of needs.
                         </p>
                     </div>
                 </SwiperSlide>
@@ -74,7 +74,7 @@ const Testimonial = () => {
                     </div>
                     <div className="text" data-swiper-parallax="-100">
                         <p className='fontcolor background '>
-                            also had some words to share about our marketplace. He stated, “This platform is a breath of fresh air in the digital marketplace scene. It’s reminiscent of platforms like Fiverr and Upwork, but it brings its own unique flair to the table. The service quality is unparalleled, providing a trustworthy environment for sellers to engage with prospective buyers. The variety of services on offer is commendable, catering to a broad spectrum of requirements. The platform’s dedication to user satisfaction is evident in its user-friendly design and efficient functionality. It’s a marketplace that distinguishes itself through its commitment to quality, diversity, and ease of use. I wholeheartedly endorse it to anyone in search of professional services online.” His endorsement further attests to the quality and dependability of our platform.
+                            also had some words to share about our marketplace. He stated, “This platform is a breath of fresh air in the digital marketplace scene. It’s reminiscent of platforms like Fiverr and Upwork, but it brings its own unique flair to the table. The service quality is unparalleled, providing a trustworthy environment for sellers to engage with prospective buyers. The variety of services on offer is commendable.
                         </p>
                     </div>
                 </SwiperSlide>

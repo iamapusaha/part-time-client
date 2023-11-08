@@ -51,7 +51,7 @@ const MyPostedJobs = () => {
     }
     return (
 
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto my-10">
             <Helmet>
                 <title>Part Time || Posted Job</title>
             </Helmet>
