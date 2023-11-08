@@ -72,7 +72,7 @@ const SignUp = () => {
             </Helmet>
             <div className=" my-16 px-3 md:px-0">
                 <h1 className="text-4xl font-semibold text-center mb-3">Please SignUp</h1>
-                <div className="md:w-3/4 lg:w-1/2 mx-auto border-b-2 border-[#FFF781] px-3 md:px-1 mb-4"></div>
+                <div className="md:w-3/4 lg:w-1/2 mx-auto border-b-2 border-black px-3 md:px-1 mb-4"></div>
                 <form onSubmit={handeSignUp} className="md:w-3/4 lg:w-1/2 mx-auto">
                     <div className="form-control">
                         <label className="label">
@@ -104,12 +104,12 @@ const SignUp = () => {
                         <label htmlFor="check-box">Accept <a href="">Term & Conditions</a></label>
                     </div>
                     <div className="form-control mt-6">
-                        <button className="btn bg-[#5056D2] text-white mb-2">SignUp</button>
+                        <button className="btn bg-[#6f7191] text-white mb-2">SignUp</button>
 
                     </div>
                 </form>
                 <div className=' text-center'>
-                    <button onClick={handleGoogleSignIn} className="md:w-3/4 lg:w-1/2 btn btn-outline bg-[#FFF781] text-base"><FcGoogle></FcGoogle>signUp with google</button>
+                    <button onClick={handleGoogleSignIn} className="md:w-3/4 lg:w-1/2 btn btn-outline bg-[#a7a8bb] text-base"><FcGoogle></FcGoogle>signUp with google</button>
                 </div>
                 <p className="text-center mt-4">Dont’t Have An Account ? <Link className="text-red-400" to='/signin'>SignIn</Link></p>
                 <p className="text-red-600 text-center mt-2 text-xl">{error}</p>

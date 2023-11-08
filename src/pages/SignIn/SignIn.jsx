@@ -45,7 +45,7 @@ const SignIn = () => {
                 <title>Part Time || SignIn</title>
             </Helmet>
             <h1 className="text-4xl font-semibold text-center mb-3">SignIn with your account</h1>
-            <div className="md:w-3/4 lg:w-1/2 mx-auto border-b-2 border-[#FFF781] px-3 md:px-1 mb-4"></div>
+            <div className="md:w-3/4 lg:w-1/2 mx-auto border-b-2 border-black px-3 md:px-1 mb-4"></div>
             <form onSubmit={handleSignIn} className="md:w-3/4 lg:w-1/2 mx-auto">
                 <div className="form-control">
                     <label className="label">
@@ -63,7 +63,7 @@ const SignIn = () => {
                     </label>
                 </div>
                 <div className="form-control mt-6">
-                    <button className="btn bg-[#5056D2] text-white">SignIn</button>
+                    <button className="btn bg-[#6f7191] text-white">SignIn</button>
                 </div>
             </form>
             <p className="text-center mt-4">Dont’t Have An Account ? <Link className="text-red-400" to='/signup'>SignUp</Link></p>
