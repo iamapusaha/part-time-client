@@ -6,8 +6,8 @@ const CategoryItems = ({ job }) => {
     const { _id, title, photo, discription, date, minPrice, maxPrice } = job;
     return (
         <div className="flex justify-center items-center border max-w-md rounded-md shadow-2xl">
-            <div className=" h-[550px]">
-                <div className="flex justify-center h-fit">
+            <div className="xl:h-[550px] lg:h-[600px] md:h-[550px]">
+                <div className="flex justify-center h-fit ">
                     <img
                         src={photo}
                         className="rounded-t-md h-[300px]"

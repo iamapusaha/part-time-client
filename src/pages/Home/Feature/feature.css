@@ -1,0 +1,21 @@
+.bgcolor {
+    background: linear-gradient(to bottom, lightgray, black);
+    animation: changebackground 4s linear 2s infinite alternate;
+}
+
+@keyframes changebackground {
+    0% {
+        background: linear-gradient(to bottom, black, white);
+        background: linear-gradient(to top, lightgray, black);
+    }
+}
+
+.fontcolor {
+    text-shadow: 0.2px 0.5px rgb(126, 125, 125);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Roboto+Slab:wght@600&family=Rubik:wght@700&display=swap");
+
+.font {
+    font-family: "Rubik", sans-serif;
+}

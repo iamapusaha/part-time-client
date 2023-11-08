@@ -8,7 +8,7 @@ import { Helmet } from "react-helmet-async";
 const BidRequest = () => {
     const { user } = useContext(AuthContext);
     const [bidRequest, setBidRequest] = useState([])
-    const url = `http://localhost:5000/buyer?email=${user?.email}`
+    const url = `https://part-time-server.vercel.app/buyer?email=${user?.email}`
     useEffect(() => {
         axios.get(url, { withCredentials: true })
             .then(res => {
@@ -16,7 +16,7 @@ const BidRequest = () => {
             })
     }, [url])
     const handleBidAccept = id => {
-        const url = `http://localhost:5000/bids/${id}`;
+        const url = `https://part-time-server.vercel.app/bids/${id}`;
         axios.patch(url, { status: 'accept' })
             .then(res => {
                 console.log(res.data);
@@ -31,7 +31,7 @@ const BidRequest = () => {
             })
     }
     const handleBidReject = id => {
-        const url = `http://localhost:5000/bids/${id}`;
+        const url = `https://part-time-server.vercel.app/bids/${id}`;
         axios.patch(url, { status: 'reject' })
             .then(res => {
                 console.log(res.data);
