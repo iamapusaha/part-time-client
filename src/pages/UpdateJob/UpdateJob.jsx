@@ -13,7 +13,7 @@ const UpdateJob = () => {
     const MySwal = withReactContent(Swal)
     const { user } = useContext(AuthContext)
     const jobData = useLoaderData();
-    console.log(jobData);
+
     const { _id, title, date, photo, category, minPrice, maxPrice, discription } = jobData;
     const handleUpdateJob = e => {
         e.preventDefault()
@@ -27,11 +27,11 @@ const UpdateJob = () => {
         const discription = form.discription.value;
         const photo = form.photo.value;
         const newJob = { title, email, date, photo, category, minPrice, maxPrice, discription }
-        console.log(newJob);
+
         const url = `https://part-time-server.vercel.app/jobs/${_id}`
         axios.patch(url, newJob)
             .then(res => {
-                console.log(res.data);
+
                 if (res.data) {
                     MySwal.fire(
                         'WOW!',

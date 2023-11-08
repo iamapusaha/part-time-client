@@ -30,10 +30,10 @@ const JobDetails = () => {
             bidderDate: deadline,
             price,
         }
-        console.log(newBid);
+
         axios.post('https://part-time-server.vercel.app/bids', newBid)
             .then(res => {
-                console.log(res.data);
+
                 if (res.data) {
                     MySwal.fire(
                         'WOW!',

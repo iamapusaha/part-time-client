@@ -4,8 +4,10 @@ import withReactContent from 'sweetalert2-react-content'
 import { AuthContext } from '../../Provider/AuthProvider';
 import axios from 'axios';
 import { Helmet } from 'react-helmet-async';
+import { useNavigate } from 'react-router-dom';
 
 const AddJobs = () => {
+    const nevigate = useNavigate()
     const MySwal = withReactContent(Swal)
     const { user } = useContext(AuthContext)
     const handleAddJob = e => {
@@ -20,16 +22,15 @@ const AddJobs = () => {
         const discription = form.discription.value;
         const photo = form.photo.value;
         const newJob = { title, email, date, photo, category, minPrice, maxPrice, discription }
-        console.log(newJob);
         axios.post('https://part-time-server.vercel.app/jobs', newJob, { withCredentials: true })
             .then(res => {
-                console.log(res.data);
                 if (res.data) {
                     MySwal.fire(
                         'WOW!',
                         'added new jobs!',
                         'success'
                     )
+                    nevigate('/my-posted-jobs')
                 }
             })
     }

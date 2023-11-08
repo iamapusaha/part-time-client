@@ -19,7 +19,7 @@ const MyBids = () => {
         const url = `https://part-time-server.vercel.app/bids/${id}`;
         axios.patch(url, { status: 'complete' })
             .then(res => {
-                console.log(res.data);
+
                 if (res.data.modifiedCount > 0) {
                     // update state
                     const remaining = myBids.filter(bid => bid._id !== id);

@@ -12,7 +12,7 @@ const MyPostedJobs = () => {
     const MySwal = withReactContent(Swal)
     const { user } = useContext(AuthContext)
     const [postedJob, setPostedJob] = useState([])
-    // console.log(postedJob);
+
     const url = `https://part-time-server.vercel.app/jobs?email=${user?.email}`;
     useEffect(() => {
         axios.get(url, { withCredentials: true })
@@ -36,10 +36,10 @@ const MyPostedJobs = () => {
                 axios.delete(url)
                     .then(res => {
                         if (res.data.deletedCount > 0) {
-                            console.log("data successfully  daleted ");
+
                             MySwal.fire(
                                 'Deleted!',
-                                'Your file has been deleted.',
+                                'Your post job has been deleted.',
                                 'success'
                             )
                             const remainingJobs = postedJob.filter(job => job._id !== id)

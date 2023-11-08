@@ -46,7 +46,6 @@ const AuthProvider = ({ children }) => {
                 axios.post('https://part-time-server.vercel.app/logout', loggedUser, { withCredentials: true })
                     .then(res => {
                         console.log(res.data);
-                        console.log('kaka');
                     })
             }
 

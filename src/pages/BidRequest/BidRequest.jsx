@@ -19,7 +19,7 @@ const BidRequest = () => {
         const url = `https://part-time-server.vercel.app/bids/${id}`;
         axios.patch(url, { status: 'accept' })
             .then(res => {
-                console.log(res.data);
+
                 if (res.data.modifiedCount > 0) {
                     // update state
                     const remaining = bidRequest.filter(request => request._id !== id);
@@ -34,7 +34,7 @@ const BidRequest = () => {
         const url = `https://part-time-server.vercel.app/bids/${id}`;
         axios.patch(url, { status: 'reject' })
             .then(res => {
-                console.log(res.data);
+
                 if (res.data.modifiedCount > 0) {
                     // update state
                     const remaining = bidRequest.filter(request => request._id !== id);
