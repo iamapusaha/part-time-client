@@ -8,7 +8,7 @@ import { Helmet } from "react-helmet-async";
 const MyBids = () => {
     const { user } = useContext(AuthContext)
     const [myBids, setMyBids] = useState([])
-    const url = `https://part-time-server.vercel.app/bidder?email=${user?.email}`;
+    const url = `http://localhost:5000/bidder?email=${user?.email}`;
     useEffect(() => {
         axios.get(url, { withCredentials: true })
             .then(res => {
@@ -16,7 +16,7 @@ const MyBids = () => {
             })
     }, [url])
     const handleBidComplete = id => {
-        const url = `https://part-time-server.vercel.app/bids/${id}`;
+        const url = `http://localhost:5000/bids/${id}`;
         axios.patch(url, { status: 'complete' })
             .then(res => {
                 console.log(res.data);

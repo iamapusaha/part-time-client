@@ -39,7 +39,7 @@ const router = createBrowserRouter([
             {
                 path: '/jobs/:id',
                 element: <PrivateRouter><JobDetails></JobDetails></PrivateRouter>,
-                loader: ({ params }) => fetch(`https://part-time-server.vercel.app/jobs/v1/${params.id}`, { credentials: "include" })
+                loader: ({ params }) => fetch(`http://localhost:5000/jobs/v1/${params.id}`, { credentials: "include" })
             },
             {
                 path: '/my-posted-jobs',
@@ -48,7 +48,7 @@ const router = createBrowserRouter([
             {
                 path: '/update-job/:id',
                 element: <UpdateJob></UpdateJob>,
-                loader: ({ params }) => fetch(`https://part-time-server.vercel.app/jobs/v1/${params.id}`, { credentials: "include" })
+                loader: ({ params }) => fetch(`http://localhost:5000/jobs/v1/${params.id}`, { credentials: "include" })
             },
             {
                 path: '/my-bids',

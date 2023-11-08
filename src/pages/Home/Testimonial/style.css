@@ -1,21 +1,21 @@
-#app {
+/* #app {
     height: 100%;
-}
+} */
 
-html,
+/* html,
 body {
     position: relative;
     height: 100%;
-}
+} */
 
-body {
+/* body {
     background: #eee;
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 14px;
     color: #000;
     margin: 0;
     padding: 0;
-}
+} */
 
 .swiper {
     width: 100%;
@@ -56,4 +56,14 @@ body {
     font-size: 14px;
     max-width: 400px;
     line-height: 2;
+}
+
+.fontcolor {
+    text-shadow: 0.2px 0.5px rgb(12, 11, 11);
+}
+
+.background {
+    background-color: rgba(5, 1, 1, 0.158);
+    backdrop-filter: blur(9px);
+    padding: 8px;
 }

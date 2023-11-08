@@ -28,7 +28,7 @@ const UpdateJob = () => {
         const photo = form.photo.value;
         const newJob = { title, email, date, photo, category, minPrice, maxPrice, discription }
         console.log(newJob);
-        const url = `https://part-time-server.vercel.app/jobs/${_id}`
+        const url = `http://localhost:5000/jobs/${_id}`
         axios.patch(url, newJob)
             .then(res => {
                 console.log(res.data);

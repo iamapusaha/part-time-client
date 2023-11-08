@@ -38,14 +38,15 @@ const AuthProvider = ({ children }) => {
             setLoader(false)
             const loggedUser = { email: currentUser?.email }
             if (currentUser) {
-                axios.post('https://part-time-server.vercel.app/jwt', loggedUser, { withCredentials: true })
+                axios.post('http://localhost:5000/jwt', loggedUser, { withCredentials: true })
                     .then(res => {
                         console.log(res.data);
                     })
             } else {
-                axios.post('https://part-time-server.vercel.app/logout', loggedUser, { withCredentials: true })
+                axios.post('http://localhost:5000/logout', loggedUser, { withCredentials: true })
                     .then(res => {
                         console.log(res.data);
+                        console.log('kaka');
                     })
             }
 
