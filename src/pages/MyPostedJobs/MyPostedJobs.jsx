@@ -13,7 +13,7 @@ const MyPostedJobs = () => {
     const { user } = useContext(AuthContext)
     const [postedJob, setPostedJob] = useState([])
     // console.log(postedJob);
-    const url = `http://localhost:5000/jobs?email=${user?.email}`;
+    const url = `https://part-time-server.vercel.app/jobs?email=${user?.email}`;
     useEffect(() => {
         axios.get(url, { withCredentials: true })
             .then(res => {
@@ -32,7 +32,7 @@ const MyPostedJobs = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                const url = `http://localhost:5000/jobs/${id}`
+                const url = `https://part-time-server.vercel.app/jobs/${id}`
                 axios.delete(url)
                     .then(res => {
                         if (res.data.deletedCount > 0) {

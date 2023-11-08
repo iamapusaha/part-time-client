@@ -31,7 +31,7 @@ const JobDetails = () => {
             price,
         }
         console.log(newBid);
-        axios.post('http://localhost:5000/bids', newBid)
+        axios.post('https://part-time-server.vercel.app/bids', newBid)
             .then(res => {
                 console.log(res.data);
                 if (res.data) {
