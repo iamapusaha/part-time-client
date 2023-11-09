@@ -40,7 +40,7 @@ const JobDetails = () => {
         }
         if (todayDate > myDadeline) {
             MySwal.fire(
-                'WOW!',
+                'OPPS!',
                 'Sorry! Deadline is over',
                 'error'
             )
