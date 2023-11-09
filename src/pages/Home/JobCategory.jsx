@@ -5,6 +5,8 @@ import 'react-tabs/style/react-tabs.css';
 import CategoryItems from './CategoryItems';
 // import PropTypes from 'prop-types';
 
+
+
 const JobCategory = () => {
     const [jobs, setJobs] = useState([])
     const [defaultCategory, setDefaultCategory] = useState('web-development');
@@ -28,6 +30,7 @@ const JobCategory = () => {
                 </TabList>
 
                 <TabPanel>
+
                     <div className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5 mt-5'>
                         {
                             jobs.map((job, idx) => <CategoryItems key={idx} job={job}></CategoryItems>)
