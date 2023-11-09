@@ -7,12 +7,20 @@ import { AuthContext } from '../../Provider/AuthProvider';
 import axios from 'axios';
 
 
+
+
 import { useLoaderData } from "react-router-dom";
+
 
 const JobDetails = () => {
     const { title, photo, discription, date, minPrice, maxPrice, email } = useLoaderData();
     const MySwal = withReactContent(Swal)
     const { user } = useContext(AuthContext)
+
+    const myDadeline = new Date(date);
+
+    let todayDate = new Date();
+    todayDate.setHours(0, 0, 0, 0);
 
     const handleBidJob = e => {
         e.preventDefault()
@@ -30,20 +38,28 @@ const JobDetails = () => {
             bidderDate: deadline,
             price,
         }
+        if (todayDate > myDadeline) {
+            MySwal.fire(
+                'WOW!',
+                'Sorry! Deadline is over',
+                'error'
+            )
+        } else {
+            axios.post('https://part-time-server.vercel.app/bids', newBid)
+                .then(res => {
 
-        axios.post('https://part-time-server.vercel.app/bids', newBid)
-            .then(res => {
+                    if (res.data) {
+                        MySwal.fire(
+                            'WOW!',
+                            'your bid added!',
+                            'success'
+                        )
 
-                if (res.data) {
-                    MySwal.fire(
-                        'WOW!',
-                        'your bid added!',
-                        'success'
-                    )
-
-                }
-            })
+                    }
+                })
+        }
     }
+
 
     return (
         <div>
@@ -77,7 +93,7 @@ const JobDetails = () => {
                                     <span className="label-text">Price</span>
                                 </label>
                                 <label className="input-group">
-                                    <input type="text" name="price" placeholder="your bidding amount" className="input input-bordered w-full" />
+                                    <input type="text" required name="price" placeholder="your bidding amount" className="input input-bordered w-full" />
                                 </label>
                             </div>
                             <div className="form-control w-full">
@@ -85,7 +101,7 @@ const JobDetails = () => {
                                     <span className="label-text">Deadline</span>
                                 </label>
                                 <label className="input-group ">
-                                    <input type="date" name="deadline" className="input input-bordered w-full" />
+                                    <input type="date" required name="deadline" className="input input-bordered w-full" />
                                 </label>
                             </div>
                         </div>
