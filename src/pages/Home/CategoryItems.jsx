@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 const CategoryItems = ({ job }) => {
     const { _id, title, photo, discription, date, minPrice, maxPrice } = job;
     return (
-        <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }} className="flex justify-center items-center border max-w-md rounded-md shadow-2xl">
+        <motion.div whileHover={{ scale: 1.2 }} className="flex justify-center items-center border max-w-md rounded-md shadow-2xl">
             <div className="xl:h-[550px] lg:h-[600px] md:h-[550px]">
                 <div className="flex justify-center h-fit ">
                     <img
