@@ -128,7 +128,7 @@ const JobDetails = () => {
                         {
                             email === user?.email ?
                                 <input disabled="disabled" className=" btn btn-block bg-[#121216] text-white" type="submit" value="Bid on the project" />
-                                : <input className="btn btn-block bg-[#4D55D0] text-white" type="submit" value="Bid on the project" />
+                                : <input className="btn btn-block bg-[#6f7191] text-white" type="submit" value="Bid on the project" />
                         }
                     </form>
                 </div>
