@@ -1,7 +1,7 @@
 # React + Vite
 Live Website Link : https://part-time-8e650.web.app/
 
-# About My Project
+# Some Features About My Project
 
 - Welcome to our project, “Part Time”. This is a marketplace where buyers and sellers can interact seamlessly. Our homepage is designed with user-friendly navigation in mind, featuring a menu that allows users to easily navigate through the website.
 
@@ -23,3 +23,10 @@ Users can mark “In Progress” bids as “Complete” once they finish the job
 - In the “Bid Request” page, job owners can find a table that displays all the bids placed on their job posts. This is where they can review all the bid data, including the job title, bidder’s email, project deadline, and the bid price.
 
 Each bid is accompanied by an “Accept” and “Reject” button, giving job owners the ability to manage the bids on their posts. If a bid is accepted, the bidder is notified and can start working on the project. If a bid is rejected, the bidder is also notified. This page provides job owners with full control over the bidding process, ensuring they can select the most suitable candidate for their job.
+
+## Discription
+Welcome to ‘Part Time’, a user-centric marketplace designed to bridge the gap between job seekers and providers. Our platform offers a seamless experience, from posting jobs to bidding on projects. With features like a user-friendly interface, a comprehensive ‘My Posted Jobs’ section, and a transparent bidding process, we ensure an efficient and effective job market. Dive in, explore various job postings, share your skills, and join our community of satisfied customers
+
+## Technology i use
+Tailwind CSS, Daiyui, Framer Motion, JavaScript, React, Node.js, Express.js,
+MongoDB, Firebase and Vercel.
